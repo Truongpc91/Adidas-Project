@@ -66,6 +66,8 @@
     <!-- Products -->
     <script src="controllers/products/ListSanPhamController.js"></script>
     <script src="controllers/products/AddSanPhamController.js"></script>
+    <script src="controllers/products/UpdateSanPhamController.js"></script>
+
     <script>
         var myApp = angular.module('myApp', ['ngRoute']);
 
@@ -75,10 +77,10 @@
                     templateUrl: "views/products/list-products.html",
                     controller: listProducts
                 })
-                // .when("/list-products/delete/:id", {
-                //     templateUrl: "views/products/list-products.html",
-                //     controller: listProducts
-                // })
+                .when("/update/product/:id", {
+                    templateUrl: "views/products/update-product.html",
+                    controller: updateProduct
+                })
                 .when("/add-product", {
                     templateUrl: "views/products/add-product.html",
                     controller: addProduct

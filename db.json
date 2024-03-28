@@ -83,11 +83,35 @@
   "products": [
     {
       "id": "ss53",
-      "name": "ÁO ADIDAS",
+      "name": "ÁO ADIDAS 2024",
       "price": 20000,
       "description": "Play for the flag. The red, white and green of il Tricolore take pride-of-place in the striking design of this Italy away jersey from adidas. And, sitting on the chest, a woven team badge adds a slice of football inspiration. Moisture-managing AEROREADY means you can take this shirt onto the pitch, but its primary purpose is to fill every fan with the pride of a nation. This product is made with 100% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
       "category": "Áo",
       "image": "https://voisport.vn/wp-content/uploads/2021/09/529.jpg"
+    },
+    {
+      "id": "ea14",
+      "name": "T-Shirt Adidas 2024",
+      "price": 100000,
+      "category": "Áo",
+      "description": "ok",
+      "image": "https://pumistore.com/wp-content/uploads/2022/07/a1ccbbd16e3d0eff15a0f2563e23f4c0.jpg"
+    },
+    {
+      "id": "0e11",
+      "name": "Adidas Shoes 2024",
+      "price": 180000,
+      "category": "Giày",
+      "description": "sdasdasdasdas",
+      "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg"
+    },
+    {
+      "id": "7ac6",
+      "category": "Thể thao",
+      "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/201a71b015f34cd1b116aefd00e27f14_9366/Ao_DJau_San_Nha_Authentic_DJoi_Tuyen_Argentina_22_trang_HF2157_HM1.jpg",
+      "name": "Áo Đấu Agentina",
+      "price": 100000,
+      "description": "sdasdasdasdasd"
     }
   ]
 }

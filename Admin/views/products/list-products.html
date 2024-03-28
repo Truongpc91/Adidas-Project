@@ -1,6 +1,6 @@
 <h3>Danh sách sản phẩm</h3>
 <hr class="border-2">
-<div class="table text-center ">
+<div class="table text-center p-4 bg-light shadow p-4 mb-5 bg-white rounded">
     <table class="table">
         <thead class="table-dark">
             <tr>
@@ -19,7 +19,7 @@
                         </div>
                         <div class="col-3">
                             <input type="checkbox" ng-model="hideDescription" class="form-check-input"
-                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom">
+                                data-bs-toggle="tooltip" data-bs-placement="bottom" title="Tooltip on bottom" >
                         </div>
                     </div>
                 </td>
@@ -33,10 +33,10 @@
                 <td class="w-25">
                     <img src="{{ value.image }}" alt="" class="img-fluid w-50">
                 </td>
-                <td ng-hide="hideDescription">{{ value.description }}</td>
+                <td ng-hide="hideDescription">{{  }}</td>
                 <td>{{ value.category }}</td>
                 <td>
-                    <button class="btn btn-success">Update</button>
+                    <a href="#!/update/product/{{value.id}}" class="btn btn-success">Update</a>
                     <button class="btn btn-warning">Show</button>
                     <a class="btn btn-danger" data-bs-toggle="modal"
                         data-bs-target="#delete" ng-click="getId(value.id)">
@@ -45,18 +45,19 @@
             </tr>
         </tbody>
     </table>
+    <div class="">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link text-dark" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
 </div>
-<div class="">
-    <nav aria-label="Page navigation example">
-        <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
-        </ul>
-    </nav>
-</div>
+
 
 <!-- Modal Delete -->
 <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
