@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link
+        href="https://cdn.jsdelivr.net/gh/eliyantosarage/font-awesome-pro@main/fontawesome-pro-6.5.1-web/css/all.min.css"
+        rel="stylesheet">
+    <script src="../Js/angular.min.js"></script>
+    <script src="../Js/angular-route.js"></script>
+    <title>Admin</title>
+</head>
+<style>
+    .list a {
+        color: #FFFFFFCC;
+        opacity: 75%;
+    }
+
+    .list p:hover a {
+        color: white;
+        opacity: 100%;
+        transition: 0.1s ease-in;
+    }
+
+    .header button {
+        background-color: #6182e6;
+        color: white;
+        border-radius: 5px;
+        padding: 3px;
+    }
+
+    .header:hover button {
+        background-color: #4a6cd1;
+        transition: 0.1s ease-in-out;
+    }
+
+    .header button i {
+        padding: 5px;
+    }
+
+    .list .collapse li:hover {
+        background-color: rgb(236, 227, 227);
+        border-radius: 5px;
+        transition: 0.1s ease-in-out;
+    }
+</style>
+
+<body ng-app="myApp">
+    <div class="container-fluid">
+        <div class="row">
+            <div ng-include="'layouts/_sitebar.html'" class="col-2"></div>
+            <div ng-include="'layouts/_header.html'" class="col-10"></div>
+            <!-- <div ng-view=""></div> -->
+        </div>
+    </div>
+    <!-- User -->
+    <script src="controllers/users/ListUserController.js"></script>
+    <script src="controllers/users/AddUserController.js"></script>
+    <script src="controllers/users/UpdateUserController.js"></script>
+
+    <!-- Products -->
+    <script src="controllers/products/ListSanPhamController.js"></script>
+    <script src="controllers/products/AddSanPhamController.js"></script>
+    <script>
+        var myApp = angular.module('myApp', ['ngRoute']);
+
+        myApp.config(($routeProvider) => {
+            $routeProvider
+                .when("/list-products", {
+                    templateUrl: "views/products/list-products.html",
+                    controller: listProducts
+                })
+                // .when("/list-products/delete/:id", {
+                //     templateUrl: "views/products/list-products.html",
+                //     controller: listProducts
+                // })
+                .when("/add-product", {
+                    templateUrl: "views/products/add-product.html",
+                    controller: addProduct
+                })
+                .when("/list-users", {
+                    templateUrl: "views/users/list-users.html",
+                    controller: listUsers
+                })
+                .when("/add-user", {
+                    templateUrl: "views/users/add-user.html",
+                    controller: addUser
+                })
+                .when("/update/user/:id", {
+                    templateUrl: "views/users/update-user.html",
+                    controller: updateUser
+                })
+                .when("/dashboard", {
+                    templateUrl: "layouts/_dashboard.html",
+                })
+                .otherwise({
+                    redirectTo: "/dashboard"
+                })
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<h3>Thêm mới sản phẩm</h3>
+<hr class="border-2">
+<div class="">
+    <form class="form-control" name="formProduct" novalidate>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Name</label>
+            <input type="text" class="form-control" ng-model="form_product.name" name="name" ng-required="true">
+            <div ng-show="formProduct.name.$touched && formProduct.name.$invalid">
+                <p class="text-danger fst-italic">Vui lòng nhập tên sản phẩm !!!</p>
+            </div>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Price</label>
+            <input type="number" class="form-control" ng-model="form_product.price" name="price" ng-required="true">
+            <div ng-show="formProduct.price.$touched && formProduct.price.$invalid">
+                <p class="text-danger fst-italic">Vui lòng nhập giá sản phẩm !!!</p>
+            </div>
+        </div>
+        <div class=" mb-2 mt-2">
+            <label for="" class="label-control">Category</label>
+            <select class="form-select" ng-model="form_product.category" name="category" ng-required="true">
+                <option value="" disabled></option>
+                <option value="Áo" >Áo</option>
+                <option value="Quần" >Quần</option>
+                <option value="Giày" >Giày</option>
+                <option value="Thể thao" >Thể thao</option>
+            </select>
+            <div ng-show="formProduct.category.$touched && formProduct.category.$invalid">
+                <p class="text-danger fst-italic">Vui lòng chọn loại sản phẩm !!!</p>
+            </div>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Description</label>
+            <textarea cols="30" rows="10" class="form-control" ng-model="form_product.description" name="description" ng-required="true"></textarea>
+            <div ng-show="formProduct.description.$touched && formProduct.description.$invalid">
+                <p class="text-danger fst-italic">Vui lòng thêm mô tả !!!</p>
+            </div>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Ảnh</label>
+            <input type="text" class="form-control" ng-model="form_product.image" name="image" ng-required="true">    
+            <div ng-show="formProduct.image.$touched && formProduct.image.$invalid">
+                <p class="text-danger fst-italic">Vui lòng thêm ảnh sản phẩm !!!</p>
+            </div>
+        </div>
+        <button class="btn btn-primary mt-2" ng-click="addProduct()" type="button">Thêm</button>
+    </form>
+</div>

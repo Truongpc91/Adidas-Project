@@ -1,0 +1,93 @@
+{
+  "users": [
+    {
+      "id": "50e3",
+      "name": "Trần Đường 1",
+      "email": "tranduong@gmail.com",
+      "password": "0384196190",
+      "position": true
+    },
+    {
+      "id": "66o8",
+      "name": "Manchester is red",
+      "email": "mandan@gmail.com",
+      "password": "0384196190",
+      "position": false
+    },
+    {
+      "id": "41b5",
+      "name": "OK 3333",
+      "email": "333@gmail.com",
+      "password": "0123456",
+      "position": true
+    },
+    {
+      "id": "fd55",
+      "name": "333 555 6666",
+      "email": "555@gmail.com",
+      "password": "0123456'",
+      "position": true
+    },
+    {
+      "id": "1ee6",
+      "name": "ok sdasdasdasd  sdasdasd",
+      "email": "ok@gmail.com",
+      "password": "333333",
+      "position": true
+    },
+    {
+      "id": "54d7",
+      "name": "sdasdasd",
+      "email": "1333@gmail.com",
+      "password": "sdasdasd",
+      "position": true
+    },
+    {
+      "id": "dcc7",
+      "name": "",
+      "email": "muki@gmail.com",
+      "password": "0123456"
+    },
+    {
+      "id": "fe84",
+      "name": "OK",
+      "email": "ok@gmail.com",
+      "password": "sdasdasdad"
+    },
+    {
+      "id": "8fad",
+      "name": "sdasdasdas",
+      "email": "tranduong@gmail.com",
+      "password": "0123456p"
+    },
+    {
+      "id": "caeb",
+      "name": "sdsdasdasd",
+      "password": "sdadsdasdasd",
+      "email": "sdasdasdasd@gmail.com"
+    },
+    {
+      "id": "c992",
+      "name": "sdasdasd",
+      "email": "tranduong@gmail.com",
+      "password": "yeah",
+      "position": true
+    },
+    {
+      "id": "86f4",
+      "name": "Trần Dường",
+      "email": "OK@gmail.com",
+      "password": "0123456p"
+    }
+  ],
+  "products": [
+    {
+      "id": "ss53",
+      "name": "ÁO ADIDAS",
+      "price": 20000,
+      "description": "Play for the flag. The red, white and green of il Tricolore take pride-of-place in the striking design of this Italy away jersey from adidas. And, sitting on the chest, a woven team badge adds a slice of football inspiration. Moisture-managing AEROREADY means you can take this shirt onto the pitch, but its primary purpose is to fill every fan with the pride of a nation. This product is made with 100% recycled materials. By reusing materials that have already been created, we help to reduce waste and our reliance on finite resources and reduce the footprint of the products we make.",
+      "category": "Áo",
+      "image": "https://voisport.vn/wp-content/uploads/2021/09/529.jpg"
+    }
+  ]
+}

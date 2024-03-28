@@ -1,0 +1,35 @@
+<h3>Thêm mới người dùng</h3>
+<hr class="border-2">
+<div class="">
+    <form class="form-control" ng-init="checkValidate = {}" name="myForm" novalidate>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Name</label>
+            <input type="text" class="form-control" ng-model="form_user.name" ng-required="true" name="name">
+            <div ng-show="myForm.name.$touched && myForm.name.$invalid">
+                <p class="text-danger fst-italic">Vui lòng nhập tên !!!</p>
+            </div>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Email</label>
+            <input type="email" class="form-control" ng-model="form_user.email" ng-required="true" name="email">
+            <div ng-show="myForm.email.$touched && myForm.email.$invalid">
+                <p class="text-danger fst-italic">Vui lòng nhập email !!!</p>
+            </div>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Password</label>
+            <input type="password" class="form-control" ng-model="form_user.password" ng-required="true" name="password">
+            <div ng-show="myForm.password.$touched && myForm.password.$invalid">
+                <p class="text-danger fst-italic">Vui lòng nhập mật khẩu !!!</p>
+            </div>
+        </div>
+        <div class="form-check form-switch mb-2 mt-2">
+            <input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" ng-model="form_user.position">
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+                ng-show="form_user.position == true">Admin</label>
+            <label class="form-check-label" for="flexSwitchCheckDefault"
+                ng-show="!form_user.position == true">User</label>
+        </div>
+        <button class="btn btn-primary mt-2" ng-click="addUser()" type="button">Thêm</button>
+    </form>
+</div>
