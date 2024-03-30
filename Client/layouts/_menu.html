@@ -47,9 +47,13 @@
                         role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-user"></i>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
-                        <li><a class="dropdown-item" href="#!/login">Đăng Nhập</a></li>
-                        <li><a class="dropdown-item" href="#!/register-account">Đăng Ký</a></li>
+                    <!-- <ul ng-show="user" class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink2">
+                        
+                    </ul> -->
+                    <ul  class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDropdownMenuLink">
+                        <li ng-show="!user"><a class="dropdown-item" href="#!/login">Đăng Nhập</a></li>
+                        <li ng-show="!user"><a class="dropdown-item" href="#!/register-account">Đăng Ký</a></li>
+                        <li ng-show="user"><a class="dropdown-item" ng-click="Logout()" style="cursor: pointer;">Đăng xuất</a></li>
                     </ul>
                 </li>
                 <li class="nav-item mx-2">

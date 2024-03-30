@@ -9,15 +9,20 @@
                             <form>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example3cg">Địa chỉ Email</label>
-                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" ng-model="form_login.email" />
+                                    <p ng-show="errorLogin.email" class="text-danger fst-italic">Vui lòng nhập email !!! </p>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" ng-model="form_login.password" />
+                                    <p ng-show="errorLogin.password" class="text-danger fst-italic">Vui lòng nhập email !!! </p>
                                 </div>
+                                <p ng-show="errorLogin.non_email_password" class="text-danger fst-italic">Sai mật khẩu hoặc tài khoản !!!</p>
+                                <p ng-show="successfullyLogin.admin" class="text-success fst-italic">Đăng nhập thành công với vai trò quản trị viên</p>
+                                <p ng-show="successfullyLogin.user" class="text-success fst-italic">Đăng nhập thành công với vai trò người dùng</p>
                                 <div class="d-flex justify-content-center mt-3">
                                     <button type="button"
-                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body w-100 border-0 ">Đăng
+                                        class="btn btn-success btn-block btn-lg gradient-custom-4 text-body w-100 border-0" ng-click="Login()">Đăng
                                         nhập</button>
                                 </div>
                                 <hr>
@@ -41,7 +46,8 @@
                                     </div>
                                 </div>
                                 <p class="text-center text-muted mt-3 mb-0">Bạn chưa có tài khoản ? <a
-                                        href="register.html" class="fw-bold text-info"><u>Đăng ký ngay !</u></a></p>
+                                        href="#!/register-account" class="fw-bold text-info"><u>Đăng ký ngay !</u></a>
+                                </p>
 
                             </form>
                         </div>
