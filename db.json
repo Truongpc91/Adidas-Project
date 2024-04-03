@@ -107,11 +107,35 @@
     },
     {
       "id": "7ac6",
-      "category": "Thể thao",
+      "category": "sport",
       "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/201a71b015f34cd1b116aefd00e27f14_9366/Ao_DJau_San_Nha_Authentic_DJoi_Tuyen_Argentina_22_trang_HF2157_HM1.jpg",
       "name": "Áo Đấu Agentina",
       "price": 100000,
       "description": "sdasdasdasdasd"
+    },
+    {
+      "id": "4d7c",
+      "name": "Áo thun Ba Lá Classics Adicolor",
+      "price": 210000,
+      "category": "Áo",
+      "description": "ádasdasdasd",
+      "image": "https://assets.adidas.com/images/w_600,f_auto,q_auto/707f2410d5ce41c5a90bac29010d68cf_9366/Ao_thun_Ba_La_Classics_Adicolor_trang_GN2899_01_laydown.jpg"
+    },
+    {
+      "id": "2d1a",
+      "name": "Áo Đấu tuyển Tây Ban Nha",
+      "price": 200000,
+      "category": "sport",
+      "description": "Quá ok",
+      "image": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/554085a8b1114cf290872a689e9d97d5_9366/spain-2024-home-authentic-jersey.jpg"
+    },
+    {
+      "id": "e5db",
+      "name": "Giày adidas Grand Court Cloudfoam Lifestyle Court Comfort GW9214",
+      "price": 110000,
+      "category": "Giày",
+      "description": "SDASDASDASDASD",
+      "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg"
     }
   ]
 }

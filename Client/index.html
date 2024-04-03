@@ -34,6 +34,7 @@
 
     <!-- Products -->
     <script src="controllers/products/productsClientController.js"></script>
+    <script src="controllers/products/DetailProductController.js"></script>
     <script src="controllers/authenticates/LoginController.js"></script>
     <script>
         var myApp = angular.module('myApp', ['ngRoute']);
@@ -48,14 +49,15 @@
                     templateUrl: "../register.html",
                     // controller: listProducts
                 })
+                .when("/product/detail/:id", {
+                    templateUrl: "views/products/detailProduct.html",
+                    controller: detailProduct
+                })
                 .when("/", {
                     templateUrl: "views/products/productClient.html",
                     controller: productsClient
                 })
-                // .when("/add-product", {
-                //     templateUrl: "views/products/add-product.html",
-                //     controller: addProduct
-                // })
+               
                 // .when("/list-users", {
                 //     templateUrl: "views/users/list-users.html",
                 //     controller: listUsers
@@ -76,6 +78,7 @@
                 })
         });
     </script>
+    <script src="./controllers/config.js"></script>
 </body>
 
 </html>

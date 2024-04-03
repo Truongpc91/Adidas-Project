@@ -1,0 +1,371 @@
+<style>
+    #sizes :hover {
+        text-decoration: underline;
+    }
+
+    .voucher ul>li:hover {
+        text-decoration: underline;
+    }
+
+    .wrapper {
+        max-height: 500px;
+        border: 1px solid #ddd;
+        display: flex;
+        overflow: auto;
+    }
+
+    .wrapper-detail {
+        max-height: 950px;
+        border: 1px solid #ddd;
+        overflow: auto;
+    }
+
+    .wrapper::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .hovereffect {
+        width: 100%;
+        height: 100%;
+        float: left;
+        overflow: hidden;
+        position: relative;
+        text-align: center;
+        cursor: default;
+    }
+
+    .hovereffect .overlay {
+        border-radius: 5px;
+        width: 100%;
+        position: absolute;
+        overflow: hidden;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        padding: 1em;
+        height: 4.75em;
+        background: #79FAC4;
+        color: #3c4a50;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+        visibility: hidden;
+
+    }
+
+    .hovereffect img {
+        display: block;
+        position: relative;
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+    }
+
+    .hovereffect:hover img {
+        -webkit-transform: translate3d(0, -10%, 0);
+        transform: translate3d(0, -10%, 0);
+    }
+
+    .hovereffect h2 {
+        /* text-transform: uppercase; */
+        border-radius: 10px;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        font-size: 17px;
+        padding: 10px 70px;
+        background: rgba(0, 0, 0, 0.6);
+        /* float: left; */
+        margin: 0px;
+        display: inline-block;
+    }
+
+    .hovereffect a.info {
+        display: inline-block;
+        text-decoration: none;
+        padding: 7px 14px;
+        text-transform: uppercase;
+        color: #fff;
+        border: 1px solid #fff;
+        margin: 50px 0 0 0;
+        background-color: transparent;
+    }
+
+    .hovereffect a.info:hover {
+        box-shadow: 0 0 5px #fff;
+    }
+
+
+    .hovereffect p.icon-links a {
+        float: right;
+        color: #3c4a50;
+        font-size: 1.4em;
+    }
+
+    .hovereffect:hover p.icon-links a:hover,
+    .hovereffect:hover p.icon-links a:focus {
+        color: #252d31;
+    }
+
+    .hovereffect h2,
+    .hovereffect p.icon-links a {
+        -webkit-transition: -webkit-transform 0.35s;
+        transition: transform 0.35s;
+        -webkit-transform: translate3d(0, 200%, 0);
+        transform: translate3d(0, 200%, 0);
+        visibility: visible;
+    }
+
+    .hovereffect p.icon-links a span:before {
+        display: inline-block;
+        padding: 8px 10px;
+        speak: none;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+
+    .hovereffect:hover .overlay,
+    .hovereffect:hover h2,
+    .hovereffect:hover p.icon-links a {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+
+    .hovereffect:hover h2 {
+        -webkit-transition-delay: 0.05s;
+        transition-delay: 0.05s;
+    }
+
+    .hovereffect:hover p.icon-links a:nth-child(3) {
+        -webkit-transition-delay: 0.1s;
+        transition-delay: 0.1s;
+    }
+
+    .hovereffect:hover p.icon-links a:nth-child(2) {
+        -webkit-transition-delay: 0.15s;
+        transition-delay: 0.15s;
+    }
+
+    .hovereffect:hover p.icon-links a:first-child {
+        -webkit-transition-delay: 0.2s;
+        transition-delay: 0.2s;
+    }
+</style>
+<div class="container" >
+    <div class="row">
+        <h2 class="fst-italic ">Sản phẩm chi tiết</h2>
+        <div class="wrapper-detail col-xl-9 bg-light p-3" style="height: 1100px;">
+            <div class="text-center pb-5 p-4">
+                <img src="{{ product.image }}" alt="" class="img-fluid w-50">
+            </div>
+            <hr class="">
+            <div class="description p-3">
+                <div class="">
+                    <p class="">MÔ TẢ SẢN PHẨM <a class="float-end" data-bs-toggle="collapse" href="#description"
+                            role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a></p>
+                    <div class="collapse" id="description">
+                        <div class="">
+                            {{ product.description }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="detail p-3">
+                <div class="">
+                    <p class="">Chi tiết <a class="float-end" data-bs-toggle="collapse" href="#detail" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a></p>
+                    <div class="collapse" id="detail">
+                        <ul>
+                            <li>100% Cotton</li>
+                            <li>Slim fit</li>
+                            <li>Chính hãng </li>
+                            <li>Màu : trắng</li>
+                            <li>Product code: IN0656</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="care p-3">
+                <div class="">
+                    <p class="">Lưu ý <a class="float-end" data-bs-toggle="collapse" href="#care" role="button"
+                            aria-expanded="false" aria-controls="collapseExample">
+                            <i class="fa-solid fa-chevron-down"></i>
+                        </a></p>
+                    <div class="collapse" id="care">
+                        <div class="row justify-content-around d-flex p-3">
+                            <div class="col-6">
+                                <p class="h3 fw-bold">Lưu ý khi giặt</p>
+                                <ul class="list-unstyled">
+                                    <li><i class="fa-solid fa-ban"></i> Không tẩy</li>
+                                    <li><i class="fa-solid fa-ban"></i> Đừng sấy khô</li>
+                                    <li><i class="fa-solid fa-ban"></i> Không dùng bàn là</li>
+                                    <li><i class="fa-solid fa-washing-machine"></i> Giặt nước lạnh</li>
+                                </ul>
+                            </div>
+                            <div class="col-6">
+                                <p class="h3 fw-bold">THÔNG TIN CHĂM SÓC BỔ SUNG</p>
+                                <ul class="">
+                                    <li>Không ủi các hình in nổi</li>
+                                    <li>Xóa ngay lập tức</li>
+                                    <li>Giặt và ủi từ trong ra ngoài</li>
+                                    <li>Không sử dụng chất làm mềm vải</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p class="h4 p-3">Sản phẩm cùng loại</p>
+            <div class="wrapper">
+                <div class="item" ng-repeat="value in listProducts | filterCategory : product.category | limitTo : 4">
+                    <div class="product-card col-md-3 p-4 text-center">
+                        <div class="card border border-black" style="width: 18rem;">
+                            <div class="img p-3">
+                                <div class="hovereffect">
+                                    <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger p-3" style="cursor: pointer;">
+                                        <img class="img-responsive img-fluid" src="{{ value.image }}" alt="">
+                                    </a>
+                                    <div class="overlay">
+                                        <h2>
+                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                                đ
+                                            </p>
+                                        </h2>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <h6 class="card-title text-dark">{{ value.name | uppercase }}</h6>
+                                    </div>
+                                </div>
+                                <button class="btn btn-info w-100" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasWithBothOptions"
+                                    aria-controls="offcanvasWithBothOptions" ng-click="detailProduct_EndPage(value.id)">Xem chi tiết</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-3 p-2">
+            <div class="">
+                <ul class="list-unstyled nav-link">
+                    <li class="opacity-50">
+                        <p>Loại : {{ product.category }}</p>
+                    </li>
+                    <li>
+                        <p class="h3 text-decoration-none text-uppercase pb-3"> {{ product.name }}</p>
+                    </li>
+                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{ product.price }}
+                        </a><a class="text-black">đ</a></li>
+                    <li>
+                        <p class="fw-bold">Sizes</p>
+                        <div class=" p-2  text-center">
+                            <p class="btn btn-light w-25 p-2">XS</p>
+                            <p class="btn btn-light w-25 p-2">S</p>
+                            <p class="btn btn-light w-25 p-2">M</p>
+
+                            <p class="btn btn-light w-25 p-2">L</p>
+                            <p class="btn btn-light w-25 p-2">XL</p>
+                        </div>
+                        <div class="" id="sizes" style="cursor: pointer;">
+                            <p><i class="fa-solid fa-ruler"></i> chọn size</p>
+                        </div>
+                    </li>
+                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
+                    </li>
+                </ul>
+                <button class="btn btn-dark p-3 w-75">Thêm vào giỏ hàng <i
+                        class="fa-solid fa-cart-shopping"></i></button>
+                <button class="btn btn-light p-3 w-20"><i class="fa-solid fa-heart"></i></button>
+                <div class="voucher pt-5">
+                    <p class="badge bg-danger text-wrap p-2"><i class="fa-solid fa-ticket"></i> Ưu đãi thành viên
+                    </p>
+                    <ul class="list-unstyled">
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển</p>
+                        </li>
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-swap"></i> Hỗ trợ đổi trả hàng</p>
+                        </li>
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-badge-percent"></i> Giảm 15% giá</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Detail -->
+<div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions"
+    aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Xem nhanh sản phẩm</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div>
+            <img src="{{ productDetailCategory.image }}" alt="" class="img-fluid ">
+        </div>
+        <div class="dropdown mt-3">
+            <div class="">
+                <ul class="list-unstyled nav-link">
+                    <li class="opacity-50">
+                        <p>Loại : Áo</p>
+                    </li>
+                    <li>
+                        <p class="h3 text-decoration-none text-uppercase pb-3"> {{ productDetailCategory.name }}</p>
+                    </li>
+                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{ productDetailCategory.price }} </a><a
+                            class="text-black">đ</a></li>
+                    <li>
+                        <p class="fw-bold">Sizes</p>
+                        <div class=" p-2  text-center">
+                            <p class="btn btn-light w-25 p-2">XS</p>
+                            <p class="btn btn-light w-25 p-2">S</p>
+                            <p class="btn btn-light w-25 p-2">M</p>
+
+                            <p class="btn btn-light w-25 p-2">L</p>
+                            <p class="btn btn-light w-25 p-2">XL</p>
+                        </div>
+                        <div class="" id="sizes" style="cursor: pointer;">
+                            <p><i class="fa-solid fa-ruler"></i> chọn size</p>
+                        </div>
+                    </li>
+                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
+                    </li>
+                </ul>
+                <button class="btn btn-dark p-3 w-75">Thêm vào giỏ hàng <i
+                        class="fa-solid fa-cart-shopping"></i></button>
+                <button class="btn btn-light p-3 w-20"><i class="fa-solid fa-heart"></i></button>
+                <div class="voucher pt-5">
+                    <p class="badge bg-danger text-wrap p-2"><i class="fa-solid fa-ticket"></i> Ưu đãi thành viên
+                    </p>
+                    <ul class="list-unstyled">
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-truck-fast"></i> Miễn phí vận chuyển</p>
+                        </li>
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-swap"></i> Hỗ trợ đổi trả hàng</p>
+                        </li>
+                        <li style="cursor: pointer;">
+                            <p class=""><i class="fa-solid fa-badge-percent"></i> Giảm 15% giá</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

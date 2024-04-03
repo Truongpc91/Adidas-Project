@@ -98,6 +98,13 @@
                     controller: updateUser
                 })
                 .when("/dashboard", {
+                    // resolve: {
+                    //     "check": function($location,$rootScope) {
+                    //         if(!$rootScope.admin){
+                    //            window.location.href = "../Client/index.html#!/login";
+                    //         }
+                    //     }
+                    // },
                     templateUrl: "layouts/_dashboard.html",
                 })
                 .otherwise({

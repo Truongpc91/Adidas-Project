@@ -1,4 +1,4 @@
-window.CheckLogin = function($scope,$http,$rootScope){
+window.CheckLogin = function($location,$scope,$http,$rootScope){
     var apiUsers = "http://localhost:3000/users/";
 
     $http.get(apiUsers).then(
@@ -53,11 +53,12 @@ window.CheckLogin = function($scope,$http,$rootScope){
                 }
                 if($rootScope.admin){
                     $scope.successfullyLogin.admin = true;
-                    
                     setTimeout(() => {
-                        window.location.href = "../Admin/index.html"; 
+                        window.location.href = '../Admin/index.html#!/dashboard';
+                        // $location.path = '/dashboard';
                     }, 2000);
                 }
+                
             }
        }  
     }

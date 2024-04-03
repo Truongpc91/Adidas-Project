@@ -198,7 +198,7 @@
                         <div class="tab-pane fade show " id="ao" role="tabpanel" aria-labelledby="ao-tab">
                             <div class="row">
                                 <div class="product-card col-md-3 p-4 text-center"
-                                    ng-repeat="(index,value) in productsClient | limitTo : 4 | filter : 'Áo'">
+                                    ng-repeat="(index,value) in productsClient | filterCategory:'Áo' | limitTo : 4">
                                     <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger">
                                         <a href="#!/product/detail/{{ value.id }}"
                                             class="text-decoration-none text-danger">
@@ -233,7 +233,7 @@
                         <div class="tab-pane fade" id="quan" role="tabpanel" aria-labelledby="quan-tab">
                             <div class="row">
                                 <div class="product-card col-md-3 p-4 text-center"
-                                    ng-repeat="(index,value) in productsClient | limitTo : 4 | filter : 'Quần'">
+                                    ng-repeat="(index,value) in productsClient | filter : 'Quần' | limitTo : 4">
                                     <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger">
                                         <div class="card border border-black mt-2 mb-2" style="width: 18rem;">
                                             <div class="img p-3">
@@ -265,12 +265,12 @@
                         <div class="tab-pane fade" id="giay" role="tabpanel" aria-labelledby="giay-tab">
                             <div class="row">
                                 <div class="product-card col-md-3 p-4 text-center"
-                                    ng-repeat="(index,value) in productsClient | limitTo : 4 | filter : 'Giày'">
+                                    ng-repeat="(index,value) in productsClient | filterCategory : 'Giày'| limitTo : 4">
                                     <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger">
                                         <div class="card border border-black mt-2 mb-2" style="width: 18rem;">
                                             <div class="img p-3">
-                                                <div class="hovereffect">
-                                                    <img class="img-responsive img-fluid" src="{{ value.image }}">
+                                                <div class="hovereffect" style="cursor: pointer;">
+                                                    <img class="img-responsive img-fluid" src="{{ value.image }}" style="cursor: pointer;">
                                                     <div class="overlay">
                                                         <h2>
                                                             <p class="card-text text-danger fw-bolder">{{ value.price }}
@@ -296,7 +296,7 @@
                         <div class="tab-pane fade" id="sport" role="tabpanel" aria-labelledby="sport-tab">
                             <div class="row">
                                 <div class="product-card col-md-3 p-4 text-center"
-                                    ng-repeat="(index,value) in productsClient | limitTo : 4 | filter : 'Thể Thao'">
+                                    ng-repeat="(index,value) in productsClient | filterCategory : 'sport' | limitTo : 4">
                                     <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger">
                                         <div class="card border border-black mt-2 mb-2" style="width: 18rem;">
                                             <div class="img p-3">
