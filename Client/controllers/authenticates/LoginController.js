@@ -34,9 +34,13 @@ window.CheckLogin = function($location,$scope,$http,$rootScope){
             $scope.listUsers.find((user) => {
                 if(user.email == $scope.form_login.email && user.password == $scope.form_login.password){
                     if(user.position == true){
+                        localStorage.setItem("adminId",user.id);
+                        localStorage.setItem('adminName',user.name);
                         $rootScope.admin = user;
                     }
                     if(user.position == false){
+                        localStorage.setItem("userId",user.id);
+                        localStorage.setItem('userName',user.name);
                         $rootScope.user = user;
                     }
                 }
@@ -53,6 +57,7 @@ window.CheckLogin = function($location,$scope,$http,$rootScope){
                 }
                 if($rootScope.admin){
                     $scope.successfullyLogin.admin = true;
+
                     setTimeout(() => {
                         window.location.href = '../Admin/index.html#!/dashboard';
                         // $location.path = '/dashboard';

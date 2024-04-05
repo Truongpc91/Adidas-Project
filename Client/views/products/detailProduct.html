@@ -152,7 +152,7 @@
         transition-delay: 0.2s;
     }
 </style>
-<div class="container" >
+<div class="container">
     <div class="row">
         <h2 class="fst-italic ">Sản phẩm chi tiết</h2>
         <div class="wrapper-detail col-xl-9 bg-light p-3" style="height: 1100px;">
@@ -229,12 +229,13 @@
                         <div class="card border border-black" style="width: 18rem;">
                             <div class="img p-3">
                                 <div class="hovereffect">
-                                    <a href="#!/product/detail/{{ value.id }}" class="text-decoration-none text-danger p-3" style="cursor: pointer;">
+                                    <a href="#!/product/detail/{{ value.id }}"
+                                        class="text-decoration-none text-danger p-3" style="cursor: pointer;">
                                         <img class="img-responsive img-fluid" src="{{ value.image }}" alt="">
                                     </a>
                                     <div class="overlay">
                                         <h2>
-                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                            <p class="card-text text-danger fw-bolder">{{ value.price | currency:'':0 }}
                                                 đ
                                             </p>
                                         </h2>
@@ -248,8 +249,8 @@
                                     </div>
                                 </div>
                                 <button class="btn btn-info w-100" type="button" data-bs-toggle="offcanvas"
-                                    data-bs-target="#offcanvasWithBothOptions"
-                                    aria-controls="offcanvasWithBothOptions" ng-click="detailProduct_EndPage(value.id)">Xem chi tiết</button>
+                                    data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions"
+                                    ng-click="detailProduct_EndPage(value.id)">Xem chi tiết</button>
                             </div>
                         </div>
                     </div>
@@ -265,7 +266,8 @@
                     <li>
                         <p class="h3 text-decoration-none text-uppercase pb-3"> {{ product.name }}</p>
                     </li>
-                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{ product.price }}
+                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{ product.price |
+                            currency:'':0 }}
                         </a><a class="text-black">đ</a></li>
                     <li>
                         <p class="fw-bold">Sizes</p>
@@ -283,8 +285,12 @@
                     </li>
                     <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
                     </li>
+                    <li>Số lượng : <input type="number" class="form-control" max="10" min="1"
+                            ng-init="quantityProductCart = 1" ng-model="quantityProductCart"></li>
                 </ul>
-                <button class="btn btn-dark p-3 w-75">Thêm vào giỏ hàng <i
+                <button ng-show="userId" class="btn btn-dark p-3 w-75" ng-click="addToCart(product.id)">Thêm vào giỏ hàng <i
+                        class="fa-solid fa-cart-shopping"></i></button>
+                <button ng-show="!userId" class="btn btn-info p-3 w-75">Chưa đăng nhập<i
                         class="fa-solid fa-cart-shopping"></i></button>
                 <button class="btn btn-light p-3 w-20"><i class="fa-solid fa-heart"></i></button>
                 <div class="voucher pt-5">
@@ -328,8 +334,8 @@
                     <li>
                         <p class="h3 text-decoration-none text-uppercase pb-3"> {{ productDetailCategory.name }}</p>
                     </li>
-                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{ productDetailCategory.price }} </a><a
-                            class="text-black">đ</a></li>
+                    <li class="fw-bold pb-3 ">Giá : <a class="text-danger text-decoration-none">{{
+                            productDetailCategory.price | currency:'':0 }} </a><a class="text-black">đ</a></li>
                     <li>
                         <p class="fw-bold">Sizes</p>
                         <div class=" p-2  text-center">

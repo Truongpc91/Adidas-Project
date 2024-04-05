@@ -174,7 +174,7 @@
                                                         alt="">
                                                     <div class="overlay">
                                                         <h2>
-                                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                                            <p class="card-text text-danger fw-bolder">{{ value.price | currency:'':0 }}
                                                                 đ
                                                             </p>
                                                         </h2>
@@ -210,7 +210,7 @@
                                                         <div class="overlay">
                                                             <h2>
                                                                 <p class="card-text text-danger fw-bolder">{{
-                                                                    value.price }} đ </p>
+                                                                    value.price | currency:'':0 }} đ </p>
                                                             </h2>
                                                         </div>
                                                     </div>
@@ -242,7 +242,7 @@
                                                         alt="">
                                                     <div class="overlay">
                                                         <h2>
-                                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                                            <p class="card-text text-danger fw-bolder">{{ value.price | currency:'':0 }}
                                                                 đ
                                                             </p>
                                                         </h2>
@@ -273,7 +273,7 @@
                                                     <img class="img-responsive img-fluid" src="{{ value.image }}" style="cursor: pointer;">
                                                     <div class="overlay">
                                                         <h2>
-                                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                                            <p class="card-text text-danger fw-bolder">{{ value.price | currency:'':0 }}
                                                                 đ
                                                             </p>
                                                         </h2>
@@ -304,7 +304,7 @@
                                                     <img class="img-responsive img-fluid" src="{{ value.image }}">
                                                     <div class="overlay">
                                                         <h2>
-                                                            <p class="card-text text-danger fw-bolder">{{ value.price }}
+                                                            <p class="card-text text-danger fw-bolder">{{ value.price | currency:'':0 }}
                                                                 đ
                                                             </p>
                                                         </h2>

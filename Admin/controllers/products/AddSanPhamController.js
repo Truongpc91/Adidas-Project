@@ -1,4 +1,4 @@
-window.addProduct = function($scope,$http) {
+window.addProduct = function($scope,$http,$location) {
     let apiProducts = "http://localhost:3000/products/";
 
     $scope.addProduct = () => {
@@ -30,7 +30,7 @@ window.addProduct = function($scope,$http) {
                 (response) => { alert('Thêm mới sản phẩm thành công')},
                 (error)    => { alert(error.statusText) }
             )
-            window.location.href = "#!/list-products";
+            $location.path("/list-products");
         }else {
             alert('Vui lòng thêm tất cả thông tin sản phẩm');
         }

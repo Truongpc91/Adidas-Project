@@ -9,22 +9,24 @@
                             <form>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example1cg">Tên</label>
-                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                                    <input type="text" id="form3Example1cg" class="form-control form-control-lg" ng-model="form_register.name" />
+                                    <p ng-show="errorRegister.name" class="text-danger fst-italic">Vui lòng nhập tên !!! </p>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example3cg">Địa chỉ Email</label>
-                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
-                                </div>
-                                <div class="form-outline mb-4">
-                                    <label class="form-label" for="form3Example4cg">Số điện thoại</label>
-                                    <input type="text" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <input type="email" id="form3Example3cg" class="form-control form-control-lg" ng-model="form_register.email"/>
+                                    <p ng-show="errorRegister.email" class="text-danger fst-italic">Vui lòng nhập email !!! </p>
                                 </div>
                                 <div class="form-outline mb-4">
                                     <label class="form-label" for="form3Example4cg">Mật khẩu</label>
-                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" />
+                                    <input type="password" id="form3Example4cg" class="form-control form-control-lg" ng-model="form_register.password"/>
+                                    <p ng-show="errorRegister.password" class="text-danger fst-italic">Vui lòng nhập mật khẩu !!! </p>
                                 </div>
+                                <input type="hidden" id="form3Example4cg" class="form-control form-control-lg" ng-init="form_register.position = false" ng-model="form_register.position">
+                                <p ng-show="errorRegister.user_exists" class="text-danger fst-italic">Email đã tồn tại </p>
+                                <p ng-show="successfullyRegister.successfullyRegister" class="text-success fst-italic">Đăng ký thành công !!! </p>
                                 <div class="button d-flex justify-content-center mt-3">
-                                    <button type="button"
+                                    <button type="button" ng-click="register()"
                                         class="btn btn-success btn-block btn-lg gradient-custom-4 text-body w-100 border-0 ">Đăng
                                         ký</button>
                                 </div>

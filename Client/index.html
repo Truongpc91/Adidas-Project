@@ -32,10 +32,15 @@
     <script src="controllers/users/AddUserController.js"></script>
     <script src="controllers/users/UpdateUserController.js"></script> -->
 
+    <!-- User -->
+    <script src="controllers/authenticates/LoginController.js"></script>
+    <!-- <script src="controllers/authenticates/RegisterControllers.js"></script> -->
+    <script src="controllers/authenticates/RegisterControllers.js"></script>
+    
     <!-- Products -->
     <script src="controllers/products/productsClientController.js"></script>
     <script src="controllers/products/DetailProductController.js"></script>
-    <script src="controllers/authenticates/LoginController.js"></script>
+    <script src="controllers/cart/ListCartController.js"></script>
     <script>
         var myApp = angular.module('myApp', ['ngRoute']);
 
@@ -47,7 +52,7 @@
                 })
                 .when("/register-account", {
                     templateUrl: "../register.html",
-                    // controller: listProducts
+                    controller: registerUserControllers
                 })
                 .when("/product/detail/:id", {
                     templateUrl: "views/products/detailProduct.html",
@@ -57,11 +62,10 @@
                     templateUrl: "views/products/productClient.html",
                     controller: productsClient
                 })
-               
-                // .when("/list-users", {
-                //     templateUrl: "views/users/list-users.html",
-                //     controller: listUsers
-                // })
+                .when("/cart-list", {
+                    templateUrl: "views/cart/listCart.html",
+                    controller: listCart
+                })
                 // .when("/add-user", {
                 //     templateUrl: "views/users/add-user.html",
                 //     controller: addUser
@@ -78,6 +82,7 @@
                 })
         });
     </script>
+    <script src="controllers/layouts/HeaderController.js"></script>
     <script src="./controllers/config.js"></script>
 </body>
 

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="../images/logo.png" type="image/icon type">
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
@@ -13,7 +14,7 @@
         rel="stylesheet">
     <script src="../Js/angular.min.js"></script>
     <script src="../Js/angular-route.js"></script>
-    <title>Admin</title>
+    <title>Admin - Page</title>
 </head>
 <style>
     .list a {
@@ -98,13 +99,13 @@
                     controller: updateUser
                 })
                 .when("/dashboard", {
-                    // resolve: {
-                    //     "check": function($location,$rootScope) {
-                    //         if(!$rootScope.admin){
-                    //            window.location.href = "../Client/index.html#!/login";
-                    //         }
-                    //     }
-                    // },
+                    resolve: {
+                        "check": function($location,$rootScope) {
+                            if(!localStorage.getItem("adminId")){
+                               window.location.href = "../Client/index.html#!/login";
+                            }
+                        }
+                    },
                     templateUrl: "layouts/_dashboard.html",
                 })
                 .otherwise({
@@ -112,6 +113,7 @@
                 })
         });
     </script>
+    <script src="controllers/layouts/HeaderControllers.js"></script>
 </body>
 
 </html>
