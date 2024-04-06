@@ -163,14 +163,6 @@
       "quantity": 2,
       "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg",
       "userId": "2a39"
-    },
-    {
-      "id": "9a7a",
-      "name": "T-Shirt Adidas 2024",
-      "price": 100000,
-      "quantity": 2,
-      "image": "https://pumistore.com/wp-content/uploads/2022/07/a1ccbbd16e3d0eff15a0f2563e23f4c0.jpg",
-      "userId": "66o8"
     }
   ],
   "bills": [
@@ -178,7 +170,8 @@
       "id": "1cdd",
       "userId": "2cfd",
       "totalPrice": 40000,
-      "status": 0,
+      "methodPayment": "cash",
+      "status": 1,
       "dateTime": "Thu Apr 04 2024 21:37:41 GMT+0700 (Giờ Đông Dương)"
     },
     {
@@ -186,7 +179,7 @@
       "userId": "2cfd",
       "totalPrice": 240000,
       "methodPayment": "cash",
-      "status": 0,
+      "status": 1,
       "dateTime": "Thu Apr 04 2024 21:43:48 GMT+0700 (Giờ Đông Dương)"
     },
     {
@@ -196,6 +189,22 @@
       "methodPayment": "visa",
       "status": 0,
       "dateTime": "Fri Apr 05 2024 15:03:52 GMT+0700 (Giờ Đông Dương)"
+    },
+    {
+      "id": "36c4",
+      "userId": "66o8",
+      "totalPrice": 420000,
+      "methodPayment": "onlinepayment",
+      "status": 0,
+      "dateTime": null
+    },
+    {
+      "id": "8e41",
+      "userId": "66o8",
+      "totalPrice": 100000,
+      "methodPayment": "onlinepayment",
+      "status": 1,
+      "dateTime": "15:32:30-6/3/2024"
     }
   ]
 }

@@ -40,13 +40,15 @@ window.listCart = function($scope,$http,$location) {
 
     $scope.OrderSuccessfully = false;
 
+    let date = new Date();
+
     $scope.confirmPayment = () => {
         $scope.billProducts = {
             userId: $scope.userId,
             totalPrice: $scope.totalAmount,
             methodPayment: $scope.methodpayment,
             status: 0,
-            dateTime: Date()
+            dateTime: `${date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()} - ${date.getDay()}/${date.getMonth()+1}/${date.getFullYear()}`
         };
         
         $scope.OrderSuccessfully = true;

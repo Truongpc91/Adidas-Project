@@ -1,0 +1,66 @@
+<h3>Danh sách đơn hàng</h3>
+<hr class="border-2">
+<div class="table text-center p-4 bg-light shadow p-4 mb-5 bg-white rounded">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td>STT</td>
+                <td>Người đặt</td>
+                <td>Tổng tiền</td>
+                <td>Phương thức thanh toán</td>
+                <td>Trạng thái</td>
+                <td>Thời gian</td>
+                <td>Action</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in listBills | filter: searchText">
+                <td>{{ index + 1 }}</td>
+                <td>{{ value.userId }}</td>
+                <td>{{ value.totalPrice | currency:"":0}} VNĐ</td>
+                <td>{{ value.methodPayment | filterMethodPayment}}</td>
+                <td class="text-warning fw-bold fst-italic" ng-show="value.status == 0">{{ value.status | filterStatus}}
+                </td>
+                <td class="text-success fw-bold fst-italic" ng-show="!value.status == 0">{{ value.status |
+                    filterStatus}}</td>
+                <td>{{ value.dateTime | date:"dd/mm/yyyy" }}</td>
+                <td>
+                    <button ng-show="value.status == 0" type="button" class="btn btn-warning rounded-circle"
+                        ng-click="confirmBills(value.id)"><i class="fa-solid fa-check"></i></button>
+                    <button ng-show="!value.status == 0" type="button" class="btn btn-danger rounded-circle"><i
+                            class="fa-solid fa-x"></i></button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link text-dark" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<!-- Modal Delete -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn muốn xóa ?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    ng-click="resetId()">Hủy</button>
+                <a class="btn btn-danger" ng-click="deleteProduct(getId)">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>

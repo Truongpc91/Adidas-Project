@@ -69,6 +69,9 @@
     <script src="controllers/products/AddSanPhamController.js"></script>
     <script src="controllers/products/UpdateSanPhamController.js"></script>
 
+    <!-- Bills -->
+    <script src="controllers/bills/ListBillControllers.js"></script>
+
     <script>
         var myApp = angular.module('myApp', ['ngRoute']);
 
@@ -98,6 +101,10 @@
                     templateUrl: "views/users/update-user.html",
                     controller: updateUser
                 })
+                .when("/list-bills", {
+                    templateUrl: "views/bills/list-bills.html",
+                    controller: ListBillControllers
+                })
                 .when("/dashboard", {
                     resolve: {
                         "check": function($location,$rootScope) {
@@ -114,6 +121,7 @@
         });
     </script>
     <script src="controllers/layouts/HeaderControllers.js"></script>
+    <script src="./controllers/config.js"></script>
 </body>
 
 </html>
