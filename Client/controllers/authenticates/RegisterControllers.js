@@ -1,4 +1,4 @@
-window.registerUserControllers = function($scope,$http) {
+window.registerUserControllers = function($scope,$http,$location) {
     var apiUsers = "http://localhost:3000/users/";
 
     $http.get(apiUsers).then(
@@ -38,36 +38,34 @@ window.registerUserControllers = function($scope,$http) {
         }
 
         if(flag) {
-            // $http.get(apiUsers+"?email="+$scope.form_register.email).then(
-            //     (response) => {
-            //         console.log(response.data); 
-            //         if(response.data != []){
-            //             $scope.successfullyRegister.successfullyRegister = true;
-            //                 setTimeout(() => {
-            //                     $http.post(apiUsers, $scope.form_register).then(
-            //                         (response) => { },
-            //                         (error)   =>  { error.statusText }
-            //                     )
-            //                 }, 1000);   
-            //         }else{
-            //             console.log(response.data);
-            //             $scope.errorRegister.user_exists = true;    
-            //         }
-            //      },
-            //     (error)   =>  { error.statusText }
-            // );
-
-            $scope.listUsers.find((user) => {
-                if(user.email == $scope.form_register.email){
-                    if(user){
-                        console.log('k được thêm');
+            $http.get(apiUsers+"?email="+$scope.form_register.email).then(
+                (response) => {
+                    console.log(response.data); 
+                    if(response.data != []){
+                        $scope.successfullyRegister.successfullyRegister = true;
+                            setTimeout(() => {
+                                $http.post(apiUsers, $scope.form_register).then(
+                                    (response) => { $location.path('/login'); },
+                                    (error)   =>  { error.statusText }
+                                )
+                            }, 1000);   
                     }else{
-                        console.log('được thêm'); 
+                        console.log(response.data);
+                        $scope.errorRegister.user_exists = true;    
                     }
-                }
-            });
-        }
+                 },
+                (error)   =>  { error.statusText }
+            );
 
-       
+            // $scope.listUsers.find((user) => {
+            //     if(user.email == $scope.form_register.email){
+            //         if(user){
+            //             console.log('k được thêm');
+            //         }else{
+            //             console.log('được thêm'); 
+            //         }
+            //     }
+            // });
+        }  
     }
 }

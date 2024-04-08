@@ -107,7 +107,7 @@
                 })
                 .when("/dashboard", {
                     resolve: {
-                        "check": function($location,$rootScope) {
+                        "check": function() {
                             if(!localStorage.getItem("adminId")){
                                window.location.href = "../Client/index.html#!/login";
                             }

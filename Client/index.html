@@ -28,15 +28,9 @@
         </div>
     </div>
     <!-- User -->
-    <!-- <script src="controllers/users/ListUserController.js"></script>
-    <script src="controllers/users/AddUserController.js"></script>
-    <script src="controllers/users/UpdateUserController.js"></script> -->
-
-    <!-- User -->
     <script src="controllers/authenticates/LoginController.js"></script>
-    <!-- <script src="controllers/authenticates/RegisterControllers.js"></script> -->
     <script src="controllers/authenticates/RegisterControllers.js"></script>
-    
+
     <!-- Products -->
     <script src="controllers/products/productsClientController.js"></script>
     <script src="controllers/products/DetailProductController.js"></script>
@@ -66,17 +60,6 @@
                     templateUrl: "views/cart/listCart.html",
                     controller: listCart
                 })
-                // .when("/add-user", {
-                //     templateUrl: "views/users/add-user.html",
-                //     controller: addUser
-                // })
-                // .when("/update/user/:id", {
-                //     templateUrl: "views/users/update-user.html",
-                //     controller: updateUser
-                // })
-                // .when("/dashboard", {
-                //     templateUrl: "layouts/_dashboard.html",
-                // })
                 .otherwise({
                     redirectTo: "/"
                 })

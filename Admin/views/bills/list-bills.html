@@ -9,6 +9,7 @@
                 <td>Tổng tiền</td>
                 <td>Phương thức thanh toán</td>
                 <td>Trạng thái</td>
+                <td>Chi tiết</td>
                 <td>Thời gian</td>
                 <td>Action</td>
             </tr>
@@ -23,11 +24,16 @@
                 </td>
                 <td class="text-success fw-bold fst-italic" ng-show="!value.status == 0">{{ value.status |
                     filterStatus}}</td>
-                <td>{{ value.dateTime | date:"dd/mm/yyyy" }}</td>
+                <td>
+                    <button class="btn btn-light" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                        ng-click="detailBillProducts(value.id)">Chi tiết</button>
+                </td>
+                <td class="w-25 ">{{ value.dateTime }}</td>
                 <td>
                     <button ng-show="value.status == 0" type="button" class="btn btn-warning rounded-circle"
                         ng-click="confirmBills(value.id)"><i class="fa-solid fa-check"></i></button>
-                    <button ng-show="!value.status == 0" type="button" class="btn btn-danger rounded-circle"><i
+                    <button ng-show="!value.status == 0" type="button" class="btn btn-danger rounded-circle" ng-click="deleteBill(value.id)"><i
                             class="fa-solid fa-x"></i></button>
                 </td>
             </tr>
@@ -48,7 +54,7 @@
 
 
 <!-- Modal Delete -->
-<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -61,6 +67,34 @@
                     ng-click="resetId()">Hủy</button>
                 <a class="btn btn-danger" ng-click="deleteProduct(getId)">Xóa</a>
             </div>
+        </div>
+    </div>
+</div>
+
+<div class="offcanvas offcanvas-end w-50" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasRightLabel">Chi tiết đơn hàng</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <!-- {{ detailBill }} -->
+        <hr class="my-4">
+        <div class="row d-flex justify-content-between align-items-center"
+            ng-repeat="(index,value) in detailBill">
+            <div class="col-md-2 col-lg-2 col-xl-2">
+                <img src="{{ value.image }}" class="img-fluid rounded-3" alt="Cotton T-shirt">
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-3">
+                <h6 class="text-black mb-0">{{ value.name }}</h6>
+            </div>
+            <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+                <input value="{{ value.quantity }}" type="number"
+                    class="form-control form-control-sm" disabled/>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 offset-lg-1">
+                <h6 class="mb-0">{{ value.price | currency:'':0 }} VNĐ</h6>
+            </div>
+            <hr class="my-4">
         </div>
     </div>
 </div>

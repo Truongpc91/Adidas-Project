@@ -7,6 +7,7 @@ window.listCart = function($scope,$http,$location) {
     var coutPrice = 0;
     
     $scope.listProductInCart = [];
+
     $scope.userId = localStorage.getItem("userId");
     
     $http.get(apiCart).then(
@@ -48,12 +49,15 @@ window.listCart = function($scope,$http,$location) {
             totalPrice: $scope.totalAmount,
             methodPayment: $scope.methodpayment,
             status: 0,
-            dateTime: `${date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()} - ${date.getDay()}/${date.getMonth()+1}/${date.getFullYear()}`
+            dateTime: `${date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()} - ${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
+            details: $scope.listProductInCart,
         };
-        
-        $scope.OrderSuccessfully = true;
-
-        setTimeout(() => {
+        console.log();
+        if($scope.listProductInCart.length == 0){
+            alert('Không có gì trong giỏ hàng');
+        }else{
+            $scope.OrderSuccessfully = true;
+            setTimeout(() => {
             $http.post(apiBill, $scope.billProducts).then(
                 (response) => { 
                     for (let i = 0; i < $scope.listProductInCart.length; i++) {
@@ -66,6 +70,6 @@ window.listCart = function($scope,$http,$location) {
                 (error) => { error.statusText }
             );
         }, 2000);
-       
+        }  
     }
 }
