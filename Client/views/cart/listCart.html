@@ -27,8 +27,8 @@
                         onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
                         <i class="fas fa-minus"></i>
                       </button> -->
-                      <input min="1" max="10" name="quantity" value="{{ value.quantity }}" type="number"
-                        class="form-control form-control-sm" />
+                      <input min="1" max="10" name="quantity" ng-model="value.quantity" type="number"
+                        class="form-control form-control-sm" ng-click="updateCart(value.quantity,value.id)" ng-init="quantityy = value.quantity"/>
                       <!-- <button class="btn btn-link px-2"
                         onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
                         <i class="fas fa-plus"></i>
@@ -64,17 +64,6 @@
                     </select>
                   </div>
 
-                  <!-- <h5 class="text-uppercase mb-3">Give code</h5> -->
-
-                  <!-- <div class="mb-5">
-                    <div class="form-outline">
-                      <input type="text" id="form3Examplea2" class="form-control form-control-lg" />
-                      <label class="form-label" for="form3Examplea2">Enter your code</label>
-                    </div>
-                  </div> -->
-                  <!-- <input type="hidden" ng-model="form_payment.dateTime">
-                  <input type="hidden" ng-init="form_payment.customerId = user.id" ng-model="form_payment.customerId"> -->
-
                   <hr class="my-4">
 
                   <div class="d-flex justify-content-between mb-5">
@@ -82,7 +71,7 @@
                     <h5>{{ totalAmount | currency:"":0}} VNĐ</h5>
                   </div>
 
-                  <span class="text-success fst-italic" ng-show="OrderSuccessfully"> Đặt hàng thành công </span>
+                  <p class="text-success fst-italic" ng-show="OrderSuccessfully"> Đặt hàng thành công </p>
                   <button ng-show="userId" type="button" class="btn btn-warning btn-block btn-lg"
                     data-mdb-ripple-color="dark" ng-click="confirmPayment()">Đặt Hàng</button>
                   <a ng-show="!userId" type="button" class="btn btn-success btn-block btn-lg" href="#!/login"

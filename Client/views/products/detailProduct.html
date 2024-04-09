@@ -288,8 +288,9 @@
                     <li>Số lượng : <input type="number" class="form-control" max="10" min="1"
                             ng-init="quantityProductCart = 1" ng-model="quantityProductCart"></li>
                 </ul>
-                <button ng-show="userId" class="btn btn-dark p-3 w-75" ng-click="addToCart(product.id)">Thêm vào giỏ hàng <i
-                        class="fa-solid fa-cart-shopping"></i></button>
+                <input type="hidden" ng-model="product.id">
+                <button ng-show="userId" class="btn btn-dark p-3 w-75" ng-click="addToCart(product.id)">Thêm vào giỏ
+                    hàng <i class="fa-solid fa-cart-shopping"></i></button>
                 <button ng-show="!userId" class="btn btn-info p-3 w-75">Chưa đăng nhập<i
                         class="fa-solid fa-cart-shopping"></i></button>
                 <button class="btn btn-light p-3 w-20"><i class="fa-solid fa-heart"></i></button>
@@ -350,10 +351,14 @@
                             <p><i class="fa-solid fa-ruler"></i> chọn size</p>
                         </div>
                     </li>
-                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
-                    </li>
+                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p></li>
+                    <li>Số lượng : <input type="number" class="form-control" max="10" min="1"
+                        ng-init="quantityProductCart = 1" ng-model="quantityProductCart"></li>
                 </ul>
-                <button class="btn btn-dark p-3 w-75">Thêm vào giỏ hàng <i
+                <input type="hidden" ng-model="productDetailCategory.id">
+                <button ng-show="userId" class="btn btn-dark p-3 w-75" ng-click="addToCartFastSee(productDetailCategory.id)">Thêm vào giỏ
+                    hàng <i class="fa-solid fa-cart-shopping"></i></button>
+                <button ng-show="!userId" class="btn btn-info p-3 w-75">Chưa đăng nhập<i
                         class="fa-solid fa-cart-shopping"></i></button>
                 <button class="btn btn-light p-3 w-20"><i class="fa-solid fa-heart"></i></button>
                 <div class="voucher pt-5">

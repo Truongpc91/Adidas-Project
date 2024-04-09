@@ -27,7 +27,7 @@ window.listCart = function($scope,$http,$location) {
     );
 
     $scope.deleteProductCart = (id) =>{
-        if(confirm('Are you sure you want to delete this product')) {
+        if(confirm('Bạn muốn xóa sản phẩm này khỏi giỏ hàng ?')) {
             $scope.actionSuccess = true;
 
             setTimeout(() => {
@@ -37,7 +37,17 @@ window.listCart = function($scope,$http,$location) {
                 ); 
             }, 1000);
         }   
-    }
+    };
+
+    $scope.updateCart = (quantity,id) => {
+        let newQuantity = {
+            quantity: quantity
+        }
+        $http.patch(apiCart + id,newQuantity).then(
+            (response) => { $location.path('/cart-list') },
+            (error)    => { error.statusText }
+        );
+    };
 
     $scope.OrderSuccessfully = false;
 
@@ -52,7 +62,6 @@ window.listCart = function($scope,$http,$location) {
             dateTime: `${date.getHours()+":"+date.getMinutes()+":"+date.getSeconds()} - ${date.getDate()}/${date.getMonth()+1}/${date.getFullYear()}`,
             details: $scope.listProductInCart,
         };
-        console.log();
         if($scope.listProductInCart.length == 0){
             alert('Không có gì trong giỏ hàng');
         }else{
@@ -62,7 +71,7 @@ window.listCart = function($scope,$http,$location) {
                 (response) => { 
                     for (let i = 0; i < $scope.listProductInCart.length; i++) {
                         $http.delete(apiCart + $scope.listProductInCart[i].id).then(
-                            (response) => {},
+                            (response) => { $location.path('/confirm-bill') },
                             (error)  => { error.statusText }
                         )
                     }

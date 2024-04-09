@@ -1,6 +1,6 @@
 let apiUser = "http://localhost:3000/users/";
 
-window.listUsers = function($scope,$http,$rootScope) {
+window.listUsers = function($scope,$http,$rootScope,$location) {
     $http.get(apiUser).then(
         (response) => { $scope.listUsers = response.data },
         (error)    => { alert(error.statusText) }
@@ -9,10 +9,14 @@ window.listUsers = function($scope,$http,$rootScope) {
     $scope.getId = (id) => {$scope.getId = id};
 
     $scope.deleteUser = (id) => {
-        $http.delete(apiUser + id).then(
-            (response) => { "#!/list-users" },
-            (error)    => { alert(error.statusText) }
-        ); 
+        $scope.successAction = true;
+
+        setTimeout(() => {
+            $http.delete(apiUser + id).then(
+                (response) => { "#!/list-users" },
+                (error)    => { alert(error.statusText) }
+            ); 
+        }, 2000);
     };
 
     $scope.showUser = (id) => {
@@ -35,5 +39,23 @@ window.listUsers = function($scope,$http,$rootScope) {
             },
             (error) => { alert(error.statusText) }
         )
+    };
+
+    $scope.resetPassword = (id) => {
+
+        if(confirm('Tạo lại mật khẩu người dùng này ?')){
+            let newPassword = {
+                password: "0123456"
+            }
+    
+            $scope.successAction = true;
+    
+            setTimeout(() => {
+                $http.patch(apiUser + id,newPassword).then(
+                    (response) => { $location.path('/list-users') },
+                    (error) => { alert(error.statusText) }
+                ) ;
+            }, 2000);
+        }
     }
 }

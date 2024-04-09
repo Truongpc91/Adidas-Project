@@ -56,7 +56,6 @@ window.registerUserControllers = function($scope,$http,$location) {
                  },
                 (error)   =>  { error.statusText }
             );
-
             // $scope.listUsers.find((user) => {
             //     if(user.email == $scope.form_register.email){
             //         if(user){

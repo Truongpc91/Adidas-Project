@@ -39,7 +39,7 @@
       "id": "54d7",
       "name": "sdasdasd",
       "email": "1333@gmail.com",
-      "password": "sdasdasd",
+      "password": "0123456",
       "position": true
     },
     {
@@ -65,7 +65,7 @@
       "position": false,
       "name": "sdasdasd",
       "email": "dcmmm@gmail.com",
-      "password": "0123"
+      "password": "0123456"
     },
     {
       "id": "2cfd",
@@ -73,6 +73,13 @@
       "email": "toilatruong@gmail.com",
       "password": "0123456",
       "position": false
+    },
+    {
+      "id": "9158",
+      "position": false,
+      "name": "Trường",
+      "email": "kikiki@gmail.com",
+      "password": "0123456"
     }
   ],
   "products": [
@@ -139,18 +146,55 @@
       "category": "sport",
       "description": "sdasdasdasd",
       "image": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/554085a8b1114cf290872a689e9d97d5_9366/spain-2024-home-authentic-jersey.jpg"
+    },
+    {
+      "id": "b25e",
+      "price": "210000",
+      "image": "https://product.hstatic.net/200000100181/product/quan_short_tennis_club_trang_hs3265_21_model_a482e0bd610844f5951c1320b43253f7.jpg",
+      "description": "quá ok",
+      "category": "Quần",
+      "name": "Quần short thể thao nam Adidas"
     }
   ],
-  "cart": [],
-  "bills": [
+  "cart": [
     {
-      "id": "3fb1",
-      "userId": "66o8",
-      "totalPrice": 340000,
-      "methodPayment": "visa",
-      "status": 0,
-      "dateTime": "Fri Apr 05 2024 15:03:52 GMT+0700 (Giờ Đông Dương)"
+      "id": "bec8",
+      "idProduct": "6cbd",
+      "name": "sdasdasdasd",
+      "price": 333333,
+      "quantity": 1,
+      "image": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/554085a8b1114cf290872a689e9d97d5_9366/spain-2024-home-authentic-jersey.jpg",
+      "userId": "66o8"
     },
+    {
+      "id": "b959",
+      "idProduct": "ea14",
+      "name": "T-Shirt Adidas 2024",
+      "price": 100000,
+      "quantity": 3,
+      "image": "https://pumistore.com/wp-content/uploads/2022/07/a1ccbbd16e3d0eff15a0f2563e23f4c0.jpg",
+      "userId": "66o8"
+    },
+    {
+      "id": "44a6",
+      "idProduct": "7ac6",
+      "name": "Áo Đấu Agentina",
+      "price": 100000,
+      "quantity": 2,
+      "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/201a71b015f34cd1b116aefd00e27f14_9366/Ao_DJau_San_Nha_Authentic_DJoi_Tuyen_Argentina_22_trang_HF2157_HM1.jpg",
+      "userId": "66o8"
+    },
+    {
+      "id": "5951",
+      "idProduct": "0e11",
+      "name": "Adidas Shoes 2024",
+      "price": 180000,
+      "quantity": 2,
+      "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg",
+      "userId": "66o8"
+    }
+  ],
+  "bills": [
     {
       "id": "8e41",
       "userId": "66o8",
@@ -250,6 +294,48 @@
           "quantity": 1,
           "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg",
           "userId": "2a39"
+        }
+      ]
+    },
+    {
+      "id": "06a6",
+      "userId": "66o8",
+      "totalPrice": 810000,
+      "methodPayment": "visa",
+      "status": 1,
+      "dateTime": "0:21:30 - 9/4/2024",
+      "details": [
+        {
+          "id": "1afc",
+          "name": "Áo Đấu tuyển Tây Ban Nha",
+          "price": 200000,
+          "quantity": 2,
+          "image": "https://assets.adidas.com/images/w_383,h_383,f_auto,q_auto,fl_lossy,c_fill,g_auto/554085a8b1114cf290872a689e9d97d5_9366/spain-2024-home-authentic-jersey.jpg",
+          "userId": "66o8"
+        },
+        {
+          "id": "366c",
+          "name": "Giày adidas Grand Court Cloudfoam Lifestyle Court Comfort GW9214",
+          "price": 110000,
+          "quantity": 1,
+          "image": "https://giaysneaker.store/media/catalog/product/cache/47d66d3609f727ab73c995561c27d006/g/i/giay-adidas-grand-court-cloudfoam-lifestyle-court-comfort-cloud-white-gw9214-0_1.jpg",
+          "userId": "66o8"
+        },
+        {
+          "id": "1889",
+          "name": "Áo Đấu Agentina",
+          "price": 100000,
+          "quantity": 2,
+          "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto,fl_lossy,c_fill,g_auto/201a71b015f34cd1b116aefd00e27f14_9366/Ao_DJau_San_Nha_Authentic_DJoi_Tuyen_Argentina_22_trang_HF2157_HM1.jpg",
+          "userId": "66o8"
+        },
+        {
+          "id": "6591",
+          "name": "T-Shirt Adidas 2024",
+          "price": 100000,
+          "quantity": 1,
+          "image": "https://pumistore.com/wp-content/uploads/2022/07/a1ccbbd16e3d0eff15a0f2563e23f4c0.jpg",
+          "userId": "66o8"
         }
       ]
     }

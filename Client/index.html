@@ -60,6 +60,10 @@
                     templateUrl: "views/cart/listCart.html",
                     controller: listCart
                 })
+                .when("/confirm-bill", {
+                    templateUrl: "views/cart/thankYou.html",
+                    // controller: listCart
+                })
                 .otherwise({
                     redirectTo: "/"
                 })
