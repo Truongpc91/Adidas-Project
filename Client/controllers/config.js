@@ -1,5 +1,5 @@
 myApp.filter('filterCategory', function(){
-    return function(input,cat){ // employee
+    return function(input,cat){ 
         let output = [];
         input.filter((product) => {
             if(product.category == cat){

@@ -1,5 +1,5 @@
 <style>
-    #sizes :hover {
+    p #sizes :hover {
         text-decoration: underline;
     }
 
@@ -279,8 +279,36 @@
                             <p class="btn btn-light w-25 p-2">L</p>
                             <p class="btn btn-light w-25 p-2">XL</p>
                         </div>
-                        <div class="" id="sizes" style="cursor: pointer;">
-                            <p><i class="fa-solid fa-ruler"></i> chọn size</p>
+                       
+                        <!-- Button to Open the Modal -->
+                        <p id="sizes" data-bs-toggle="modal" data-bs-target="#myModal"  style="cursor: pointer;">
+                            <i class="fa-solid fa-ruler"></i> chọn size
+                        </p>
+
+                        <!-- The Modal -->
+                        <div class="modal" id="myModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">Bảng chọn sizes</h4>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                    </div>
+
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <img src="/images/z5558315063585_033b9422fda608839a38b0b338728b84.jpg" class="img-fluid">
+                                    </div>
+
+                                    <!-- Modal footer -->
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-danger"
+                                            data-bs-dismiss="modal">Close</button>
+                                    </div>
+
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
@@ -351,12 +379,14 @@
                             <p><i class="fa-solid fa-ruler"></i> chọn size</p>
                         </div>
                     </li>
-                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p></li>
+                    <li>Giảm giá : <p class="badge bg-danger text-wrap">10%</p>
+                    </li>
                     <li>Số lượng : <input type="number" class="form-control" max="10" min="1"
-                        ng-init="quantityProductCart = 1" ng-model="quantityProductCart"></li>
+                            ng-init="quantityProductCart = 1" ng-model="quantityProductCart"></li>
                 </ul>
                 <input type="hidden" ng-model="productDetailCategory.id">
-                <button ng-show="userId" class="btn btn-dark p-3 w-75" ng-click="addToCartFastSee(productDetailCategory.id)">Thêm vào giỏ
+                <button ng-show="userId" class="btn btn-dark p-3 w-75"
+                    ng-click="addToCartFastSee(productDetailCategory.id)">Thêm vào giỏ
                     hàng <i class="fa-solid fa-cart-shopping"></i></button>
                 <button ng-show="!userId" class="btn btn-info p-3 w-75">Chưa đăng nhập<i
                         class="fa-solid fa-cart-shopping"></i></button>
