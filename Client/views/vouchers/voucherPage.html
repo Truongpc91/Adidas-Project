@@ -1,0 +1,64 @@
+<style>
+    .coupon {
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+        padding: 20px;
+        max-width: 300px;
+        text-align: center;
+        border: 2px solid white;
+    }
+    #coupon :hover {
+        transition: 0.5s ease-in-out;
+        border-color: #777;
+    }
+
+    .coupon img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+    }
+
+    .coupon h2 {
+        color: #008930;
+        margin-top: 10px;
+    }
+
+    .coupon p {
+        color: #777;
+        line-height: 1.5;
+        margin-top: 10px;
+    }
+
+    .coupon .code {
+        font-size: 24px;
+        color: green;
+        margin-bottom: 10px;
+    }
+
+    .coupon .expiration {
+        color: #e80c0c;
+        font-size: 14px;
+    }
+</style>
+
+<div class="container">
+    <div class="row">
+        <h1>Coupon Voucher Page</h1>
+        <div id="coupon" class="col-3 p-3" ng-repeat="(index,value) in listVouchers">
+            <div class="coupon">
+                <div class="logo">
+                    <img src="/images/360_F_465127589_BfwtgftgEboy01GSVVQZP5hC9XJGXTO1.jpg"
+                        alt="GFG Logo">
+                </div>
+                <h2>{{ value.name }}</h2>
+                <p>Expiry: <span class="expiration">
+                        {{ value.dateTime }}</span>
+                </p>
+                <button class="btn btn-danger" ng-click="takenVoucher(value.id)">Taken Voucher</button>
+            </div>
+        </div>
+        
+    </div>
+    
+</div>

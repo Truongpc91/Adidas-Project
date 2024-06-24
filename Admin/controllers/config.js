@@ -17,3 +17,15 @@ myApp.filter('filterMethodPayment', function(){
     }
  })
 
+ myApp.filter('filterCategoryVouchers', function(){
+   return function(input) {
+    if(input == 0){
+       return "Giảm tiền mặt"
+    }
+    else{
+       return "Phần trăm giá"
+    }
+   }
+})
+
+

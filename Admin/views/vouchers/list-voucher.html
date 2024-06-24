@@ -1,0 +1,69 @@
+<h3>Danh sách mã giảm giá</h3>
+<hr class="border-2">
+<div class="table text-center p-4 bg-light shadow p-4 mb-5 bg-white rounded">
+    <table class="table">
+        <thead class="table-dark">
+            <tr>
+                <td>
+                    <a href="#!/add-voucher" class="btn btn-info"><i class="fa-solid fa-plus"></i></a>
+                </td>
+                <td>Code</td>
+                <td>Ghi chú</td>
+                <td>Loại giảm</td>
+                <td>Mức giảm</td>
+                <td>Ngày hết hạn</td>
+                <td>Hành động</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(index,value) in listVouchers | filter: searchText">
+                <td>{{ index + 1 }}</td>
+                <td style="width: 20%;">{{ value.code }}</td>
+                <td>{{ value.name }}</td>
+                <td>{{ value.category | filterCategoryVouchers}}</td>
+                <td>{{ value.discountLevel | currency:"":0}} 
+                    <span ng-show="(value.discountLevel > 100)">đ</span>
+                    <span ng-show="(value.discountLevel <= 100)">%</span>
+                </td>
+                <td>{{ value.dateTime }}</td>
+                <td>
+                    <a href="#!/update/product/{{value.id}}" class="btn btn-success">Update</a>
+                    <button class="btn btn-warning">Show</button>
+                    <a class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#delete"
+                        ng-click="getId(value.id)">
+                        Delete</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link text-dark" href="#">Previous</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">1</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">2</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">3</a></li>
+                <li class="page-item"><a class="page-link text-dark" href="#">Next</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>
+
+
+<!-- Modal Delete -->
+<div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Bạn muốn xóa ?</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+                    ng-click="resetId()">Hủy</button>
+                <a class="btn btn-danger" ng-click="deleteProduct(getId)">Xóa</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<h3>Thêm mới voucher giảm giá</h3>
+<hr class="border-2">
+<div class="">
+    <form class="form-control" ng-init="checkValidate = {}" name="myForm" novalidate>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Mã giảm giá</label>
+            <input type="text" class="form-control" ng-model="form_voucher.code"  name="name">
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Ghi chú</label>
+            <input type="text" class="form-control" ng-model="form_voucher.name"  name="name">
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Loại giảm giá</label>
+            <select ng-model="form_voucher.category" class="form-select">
+                <option value="0">Giảm tiền mặt</option>
+                <option value="1">Giảm phần trăm</option>
+            </select>
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Mức giảm</label>
+            <input type="number" class="form-control" ng-model="form_voucher.discountLevel"  name="email">
+        </div>
+        <div class="mb-2 mt-2">
+            <label for="" class="label-control">Ngày hết hạn</label>
+            <input type="date" class="form-control" ng-model="form_voucher.dateTime"  name="email">
+        </div>
+        <button class="btn btn-primary mt-2" ng-click="addVoucher()" type="button">Thêm</button>
+    </form>
+</div>

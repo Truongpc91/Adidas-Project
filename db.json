@@ -79,7 +79,12 @@
       "position": false,
       "name": "Trường",
       "email": "kikiki@gmail.com",
-      "password": "0123456"
+      "password": "0123456",
+      "voucherTaken": [
+        "53sd","ssd2"
+      ]
+        
+      
     }
   ],
   "products": [
@@ -347,6 +352,32 @@
           "userId": "66o8"
         }
       ]
+    }
+  ],
+  "vouchers": [
+    {
+      "id": "53sd",
+      "code": "100k",
+      "name": "Mã giảm 100k ",
+      "discountLevel": 100000,
+      "category": 0,
+      "dateTime": "30/6/2024"
+    },
+    {
+      "id": "4963",
+      "code": "Sale10%",
+      "name": "Sale10%",
+      "discountLevel": 10,
+      "category": "1",
+      "dateTime": "2024-06-29"
+    },
+    {
+      "id": "314e",
+      "code": "sale80k",
+      "name": "Giảm giá 80k",
+      "discountLevel": 80000,
+      "category": "0",
+      "dateTime": "2024-06-24"
     }
   ]
 }

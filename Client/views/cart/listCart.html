@@ -54,6 +54,16 @@
                 <div class="p-5">
                   <h3 class="fw-bold mb-5 mt-2 pt-1">Hoàn tất</h3>
                   <hr class="my-4">
+                  <h5 class="text-uppercase mb-3" >Nhập mã giảm giá (Nếu có)</h5>
+                  <!-- <input type="text" class="form-control" ng-model="voucherCode"> -->
+                  <div class="mb-4 pb-2">
+                    <select class="form-select" ng-model="voucherCode">
+                      <option value="">Không dùng mã giảm giá</option>
+                      <option value="sse3">10%</option>
+                      <option value="c246">100k</option>
+                    </select>
+                  </div>
+                  <hr class="my-4">
                   <h5 class="text-uppercase mb-3">Phương thức thanh toán</h5>
                   <div class="mb-4 pb-2">
                     <select class="form-select" ng-model="methodpayment">

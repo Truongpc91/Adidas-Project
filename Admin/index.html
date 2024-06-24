@@ -69,6 +69,10 @@
     <script src="controllers/products/AddSanPhamController.js"></script>
     <script src="controllers/products/UpdateSanPhamController.js"></script>
 
+    <!-- Vouchers -->
+    <script src="controllers/vouchers/ListVoucherController.js"></script>
+    <script src="controllers/vouchers/AddVoucherController.js"></script>
+
     <!-- Bills -->
     <script src="controllers/bills/ListBillControllers.js"></script>
 
@@ -100,6 +104,14 @@
                 .when("/update/user/:id", {
                     templateUrl: "views/users/update-user.html",
                     controller: updateUser
+                })
+                .when("/list-vouchers", {
+                    templateUrl: "views/vouchers/list-voucher.html",
+                    controller: ListVoucherController
+                })
+                .when("/add-voucher", {
+                    templateUrl: "views/vouchers/add-voucher.html",
+                    controller: AddVoucherController
                 })
                 .when("/list-bills", {
                     templateUrl: "views/bills/list-bills.html",
